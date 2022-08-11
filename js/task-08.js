@@ -9,15 +9,11 @@ form.addEventListener("submit", (event) => {
   if (email.value === "" || password.value === "") {
     return alert("Please fill in all the fields!");
   }
+  const inputElements = {
+    email: `${email.value}`,
+    password: `${password.value}`,
+  };
+  console.log(inputElements);
 
-  const formData = new FormData(event.currentTarget);
-  console.log(formData);
-
-  formData.forEach((email, password) => {
-    console.log(email);
-    console.log(password);
-  });
-
-  console.log(`Email: ${email.value}, Password: ${password.value}`);
   event.currentTarget.reset();
 });
